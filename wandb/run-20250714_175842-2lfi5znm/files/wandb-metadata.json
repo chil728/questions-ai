@@ -1,0 +1,38 @@
+{
+  "os": "Windows-11-10.0.26100-SP0",
+  "python": "CPython 3.12.8",
+  "startedAt": "2025-07-14T09:58:42.326338Z",
+  "program": "c:\\Github\\questions-ai\\main.ipynb\\",
+  "git": {
+    "remote": "https://github.com/chil728/questions-ai.git",
+    "commit": "9dda307de28203314042d28e0b91c02d3e442633"
+  },
+  "email": "chanhinieong@gmail.com",
+  "root": "c:\\Github\\questions-ai",
+  "host": "Tom",
+  "executable": "c:\\Users\\Tom\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+  "cpu_count": 14,
+  "cpu_count_logical": 20,
+  "gpu": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "1023455260672",
+      "used": "216273178624"
+    }
+  },
+  "memory": {
+    "total": "16783273984"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "NVIDIA GeForce RTX 4060 Laptop GPU",
+      "memoryTotal": "8585740288",
+      "cudaCores": 3072,
+      "architecture": "Ada",
+      "uuid": "GPU-0fe2f3b8-dd0d-e5fa-1e8c-d34514c7ec11"
+    }
+  ],
+  "cudaVersion": "12.7",
+  "writerId": "1189x0fmlh5npslut8w9x1ui8grlv8lm"
+}
