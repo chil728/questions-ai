@@ -1,0 +1,210 @@
+<p class=\"MsoNormal\"><span>
+        <font face=\"宋体\">设计一个算法，将一个正整数分解质因数。</font>
+    </span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>
+        <font face=\"宋体\">程序分析：对</font>n<font face=\"宋体\">进行分解质因数，应先找到一个最小的质数</font>
+        <font face=\"Calibri\">k</font>
+        <font face=\"宋体\">，然后按下述步骤完成：</font>
+    </span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (1)<font face=\"宋体\">
+            如果这个质数恰等于</font>
+        <font face=\"Calibri\">n</font>
+        <font face=\"宋体\">，则说明分解质因数的过程已经结束，输出即可。</font>
+    </span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (2)<font face=\"宋体\">
+            如果</font>
+        <font face=\"Calibri\">n&gt;k</font>
+        <font face=\"宋体\">，但</font>
+        <font face=\"Calibri\">n</font>
+        <font face=\"宋体\">能被</font>
+        <font face=\"Calibri\">k</font>
+        <font face=\"宋体\">整除，则应打印出</font>
+        <font face=\"Calibri\">k</font>
+        <font face=\"宋体\">的值，并用</font>
+        <font face=\"Calibri\">n</font>
+        <font face=\"宋体\">除以</font>
+        <font face=\"Calibri\">k</font>
+        <font face=\"宋体\">的商</font>
+        <font face=\"Calibri\">,</font>
+        <font face=\"宋体\">作为新的正整数</font>
+        <font face=\"Calibri\">n</font>
+        <font face=\"宋体\">，重复执行第一步。</font>
+    </span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (3)<font face=\"宋体\">
+            如果</font>
+        <font face=\"Calibri\">n</font>
+        <font face=\"宋体\">不能被</font>
+        <font face=\"Calibri\">k</font>
+        <font face=\"宋体\">整除，则用</font>
+        <font face=\"Calibri\">k+1</font>
+        <font face=\"宋体\">作为</font>
+        <font face=\"Calibri\">k</font>
+        <font face=\"宋体\">的值，重复执行第一步。</font>
+    </span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>
+        <font face=\"宋体\">根据上述算法思想，补全下列代码。</font>
+    </span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>
+        <font face=\"宋体\">输入输出示例：当</font>n=105<font face=\"宋体\">，输出：</font>
+        <font face=\"Calibri\">105= 3*5*7</font>
+    </span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <font
+            face=\"宋体\">当</font>
+        <font face=\"Calibri\">n=60</font>
+        <font face=\"宋体\">，输出：</font>
+        <font face=\"Calibri\">60= 2*2*3*5</font>
+    </span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>def fun(n):</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;print('%d='%n,end=' ')</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;for i
+        in&nbsp;</span><u><span>&nbsp;&nbsp;&nbsp;</span></u><u><span>①</span></u><u><span>&nbsp;&nbsp;&nbsp;</span></u><span>:</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while n!=i:</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if n&gt;i
+        and</span><u><span>&nbsp;&nbsp;&nbsp;</span></u><u><span>②</span></u><u><span>&nbsp;&nbsp;&nbsp;</span></u><span>:</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\">
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(i,end='*')</span><span>
+        <o:p></o:p>
+    </span>
+</p>
+<p class=\"MsoNormal\">
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><u><span>&nbsp;&nbsp;&nbsp;</span></u><u><span>③</span></u><u><span>&nbsp;&nbsp;&nbsp;</span></u><span>
+        <o:p></o:p>
+    </span>
+</p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\">
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</span><span>
+        <o:p></o:p>
+    </span>
+</p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\">
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><u><span>&nbsp;&nbsp;&nbsp;</span></u><u><span>④</span></u><u><span>&nbsp;&nbsp;&nbsp;</span></u><span>
+        <o:p></o:p>
+    </span>
+</p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>if __name__ == \"__main__\":</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;while True:</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num=input(\"<font face=\"宋体\">输入一个正整数：
+        </font>
+        <font face=\"Calibri\">\")</font>
+    </span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not num.isdigit():</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fun(int(num))</span><span>
+        <o:p></o:p>
+    </span></p>",
+
+
+
+
+<p class=\"MsoNormal\"><b><span class=\"15\">
+            <font face=\"宋体\">参考程序：</font>
+        </span></b><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>def fun(n):</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;print('%d='%n,end=' ')</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;for i in range(2,n+1):</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while n!=i:</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if n&gt;i and
+        n%i==0:</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\">
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(i,end='*')</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\">
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n=n//i</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\">
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;else:</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\">
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(n)</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>if __name__ == \"__main__\":</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;while True:</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;num=input(\"<font face=\"宋体\">输入一个正整数：
+        </font>
+        <font face=\"Calibri\">\")</font>
+    </span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if not num.isdigit():</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break</span><span>
+        <o:p></o:p>
+    </span></p>
+<p class=\"MsoNormal\"><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;fun(int(num))</span><span>
+        <o:p></o:p>
+    </span></p>
