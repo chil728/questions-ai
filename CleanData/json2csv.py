@@ -13,7 +13,7 @@ def json_convert_csv(input_folder, output_folder):
     # clean_json.traverse_and_clean_json(input_folder, output_folder)
 
     # 假設你的 JSON 資料在 data.json 檔案
-    for root, dirs, files in os.walk(output_folder):
+    for root, dirs, files in os.walk(input_folder):
         for file in files:
             if file.endswith('.json'):
                 in_path = os.path.join(root, file)
@@ -26,23 +26,21 @@ def json_convert_csv(input_folder, output_folder):
                 df = pd.DataFrame(subject_list)
 
                 # 輸出為 CSV 檔案
-                csv_file_path = os.path.join(root, file.replace('.json', '.csv'))
-                df.to_csv(csv_file_path, index=False, encoding='utf-8')
-                print(f"已轉換: {in_path} -> {csv_file_path}")
+                # ...existing code...
+                csv_file_path = os.path.join(output_folder, file.replace('.json', '.csv'))
+                os.makedirs(os.path.dirname(csv_file_path), exist_ok=True)
+                if isinstance(subject_list, list) and subject_list:
+                    df = pd.DataFrame(subject_list)
+                    df.to_csv(csv_file_path, index=False, encoding='utf-8')
+                    print(f"已轉換: {in_path} -> {csv_file_path}")
+                else:
+                    print(f"跳過空 subjectList: {in_path}")
 
 
 if __name__ == "__main__":
-    input_folder = '../cleaned_data/一級'
-    output_folder = '../cleaned_data_csv/一級'
+    input_folder = './cleaned_data/一級'
+    input_folder = os.path.abspath(input_folder)
+    output_folder = './cleaned_data_csv/一級'
+    output_folder = os.path.abspath(output_folder)
 
-    # 假設你的 JSON 資料在 data.json 檔案
-    with open(f'{input_folder}/Python_202103_1.json', 'r', encoding='utf-8') as f:
-        data = json.load(f)
-
-    main_data = data['data']
-    subject_list = main_data['subjectList']
-    # 轉成 DataFrame
-    df = pd.DataFrame(subject_list)
-
-    # 輸出為 CSV 檔案
-    df.to_csv(f'{output_folder}/Python_202103_1.csv', index=False, encoding='utf-8')
+    json_convert_csv(input_folder, output_folder)
