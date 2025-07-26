@@ -1,9 +1,10 @@
-import clean_json
 
+import clean_json
 import pandas as pd
 import json
 import os
 from bs4 import BeautifulSoup
+from tqdm import tqdm
 
 # 程序運行位置為: "~\questions-ai"
 
@@ -13,28 +14,28 @@ def json_convert_csv(input_folder, output_folder):
     # clean_json.traverse_and_clean_json(input_folder, output_folder)
 
     # 假設你的 JSON 資料在 data.json 檔案
+    # 收集所有 json 文件路徑
+    json_files = []
     for root, dirs, files in os.walk(input_folder):
         for file in files:
             if file.endswith('.json'):
                 in_path = os.path.join(root, file)
-                with open(in_path, 'r', encoding='utf-8') as f:
-                    data = json.load(f)
+                json_files.append(in_path)
 
-                main_data = data['data']
-                subject_list = main_data['subjectList']
-                # 轉成 DataFrame
-                df = pd.DataFrame(subject_list)
+    for in_path in tqdm(json_files, desc="轉換進度", unit="file"):
+        with open(in_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
 
-                # 輸出為 CSV 檔案
-                # ...existing code...
-                csv_file_path = os.path.join(output_folder, file.replace('.json', '.csv'))
-                os.makedirs(os.path.dirname(csv_file_path), exist_ok=True)
-                if isinstance(subject_list, list) and subject_list:
-                    df = pd.DataFrame(subject_list)
-                    df.to_csv(csv_file_path, index=False, encoding='utf-8')
-                    print(f"已轉換: {in_path} -> {csv_file_path}")
-                else:
-                    print(f"跳過空 subjectList: {in_path}")
+        main_data = data['data']
+        subject_list = main_data['subjectList']
+        csv_file_path = os.path.join(output_folder, os.path.basename(in_path).replace('.json', '.csv'))
+        os.makedirs(os.path.dirname(csv_file_path), exist_ok=True)
+        if isinstance(subject_list, list) and subject_list:
+            df = pd.DataFrame(subject_list)
+            df.to_csv(csv_file_path, index=False, encoding='utf-8')
+            tqdm.write(f"已轉換: {in_path} -> {csv_file_path}")
+        else:
+            tqdm.write(f"跳過空 subjectList: {in_path}")
 
 
 if __name__ == "__main__":

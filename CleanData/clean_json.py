@@ -2,6 +2,7 @@ import json
 import html
 import os
 from bs4 import BeautifulSoup
+from tqdm import tqdm
 
 # 程序運行位置為: "~\questions-ai"
 
@@ -10,16 +11,21 @@ dirty_value = [None, '', 'null'] #需清洗的數據
 
 # 遍歷文件夾並清洗 JSON 文件
 def traverse_and_clean_json(folder, out_folder):
+    # 收集所有 json 文件路徑
+    json_files = []
     for root, dirs, files in os.walk(folder):
         for file in files:
             if file.endswith('.json'):
                 in_path = os.path.join(root, file)
-                # 保持目錄結構
                 rel_path = os.path.relpath(in_path, folder)
                 out_path = os.path.join(out_folder, rel_path)
-                os.makedirs(os.path.dirname(out_path), exist_ok=True)
-                clean_json_file(in_path, out_path)
-                print(f"已處理: {in_path} -> {out_path}")
+                json_files.append((in_path, out_path))
+
+    for in_path, out_path in tqdm(json_files, desc="清洗進度", unit="file"):
+        os.makedirs(os.path.dirname(out_path), exist_ok=True)
+        clean_json_file(in_path, out_path)
+        # tqdm.write 可避免進度條被 print 影響
+        tqdm.write(f"已處理: {in_path} -> {out_path}")
 
 #清洗 HTML 格式殘留
 def clean_html(raw_html, keep_img_src=False):
