@@ -3,6 +3,8 @@ import html
 import os
 from bs4 import BeautifulSoup
 
+# 程序運行位置為: "~\questions-ai"
+
 dirty_key = ["optionE", "optionF", "optionG"] #需清洗的數據
 dirty_value = [None, '', 'null'] #需清洗的數據
 
@@ -83,7 +85,7 @@ def clean_json_file(filename, out_filename):
 
 
 def zh_to_en_punct(text):
-    with open('zh_en_punct.json', 'r', encoding='utf-8') as f:
+    with open('./cleanData/zh_en_punct.json', 'r', encoding='utf-8') as f:
         zh_en_dict = json.load(f)
     for zh, en in zh_en_dict.items():
         text = text.replace(zh, en)
@@ -102,7 +104,9 @@ def convert_file(infile, outfile):
 
 
 if __name__ == '__main__':
-    input_folder = '../data/一級'
-    output_folder = '../cleaned_data/一級'
+    input_folder = './data/一級'
+    input_folder = os.path.abspath(input_folder)
+    output_folder = './cleaned_data/一級'
+    output_folder = os.path.abspath(output_folder)
     traverse_and_clean_json(input_folder, output_folder)
     print("所有 JSON 文件已清洗完成。")
