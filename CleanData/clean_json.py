@@ -75,6 +75,9 @@ def get_next_filename(filename):
 def clean_json_file(filename, out_filename):
     with open(filename, 'r', encoding='utf-8') as f:
         raw = json.load(f)
+    if not isinstance(raw, dict) or 'data' not in raw:
+        print(f"跳過非題目格式: {filename}")
+        return
     data = raw['data']
     cleaned_subjects = [clean_subject(subj) for subj in data['subjectList']]
     data['subjectList'] = cleaned_subjects
@@ -110,9 +113,11 @@ def convert_file(infile, outfile):
 
 
 if __name__ == '__main__':
-    input_folder = './data/一級'
-    input_folder = os.path.abspath(input_folder)
-    output_folder = './cleaned_data/一級'
-    output_folder = os.path.abspath(output_folder)
-    traverse_and_clean_json(input_folder, output_folder)
+    num_ch = ["一級", "二級", "三級", "四級"]
+    for ch in num_ch:
+        input_folder = f'./data/{ch}'
+        input_folder = os.path.abspath(input_folder)
+        output_folder = f'./cleaned_data/{ch}'
+        output_folder = os.path.abspath(output_folder)
+        traverse_and_clean_json(input_folder, output_folder)
     print("所有 JSON 文件已清洗完成。")

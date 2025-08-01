@@ -1,0 +1,74 @@
+id,version,type,title,optionA,optionB,optionC,optionD,answer,analyzeContent,examDots,difficultyLevel,weType,isMySubject,knowledgeNames,answerStatus,compileEnvironment
+5086,0,1,"对于数列 3 , 8 , 11 , 15 , 17 , 19 , 25 , 30 , 44 ,采用 "" 二分查找 "" 法查找 8 ,需要查找多少次?",5,4,3,2,D,"按二分查找法的规律,每次先查找中间值,进行比较.","35,",5,0,0,分治算法,0,0
+5087,0,1,下面哪一项不是 pip 指令?,pip install Scipy,pip uninstall Jieba,pip clear,pip list,C,pip 工具中没有 clear 方法.,"35,",3,0,0,"第三方库(模块)的获取,安装与调用",0,0
+5088,0,1,"有如下 Python 语句,执行该语句后,结果是? f=lambda x:5 print(f(3))",3,没有输出,5,None,C,"将参数 3 传递给匿名函数 f ,返回值为 5 ,故选 C","35,",4,0,0,匿名函数,0,0
+5089,0,1,"执行如下 Python 代码后,结果是? def inverse(s,n=0):     while s: n = n * 10 + s % 10 s = s // 10 return n print(inverse(456,123))",654123,123456,123654,654321,C,"调用函数 inverse(456,123) ,将 456 逐位取出,并累加到 123 的后面,故选 C","35,",4,0,0,函数使用,0,0
+5090,0,1,下列有关循环和递归的描述正确的是?,"递归思想代码清晰简洁,可读性强",递归代码中不能有循环结构的语句,"递归是从问题的起点出发,逐渐将复杂问题化为简单问题,最终求得问题","能用递归实现的,一定能用循环代码实现",A,"递归是从问题的目标出发,逐渐将复杂问题化为简单问题,最终求得问题","35,",3,0,0,递归与递推,0,0
+5091,0,1,以下有关 Python 函数的定义表述中错误的是?,函数的定义必须在主程序调用语句之前出现,"在形参列表中必须先列出有默认值的形参,再列出没有默认值的形参","实参是实际占用内存地址的,而形参不占用","def 关键字后面加函数名定义函数,定义必须以冒号结尾",B,"在形参列表中必须先列出没有默认值的形参,再列出有默认值的形参.","35,",4,0,0,函数的相关概念,0,0
+5092,0,1,"如下代码运行后下面选项中描述错误的是? def pph(a,b): c=a**2+b b=a return c a=10 b=100 c=pph(a,b)+a print(a,' ',b,' ',c)","执行该函数后,变量 a 的值为 10","执行该函数后,变量 b 的值为 100","执行该函数后,变量 c 的值为 200",该函数名称为 pph,C,函数基本概念,"35,",4,0,0,函数的相关概念,0,0
+5093,0,1,"阅读下列程序段,数列的第 6 项值为多少? def fibona(x): if x==1 or x==2: f=1 for i in range(3,x+1): f=fibona(x-1)+fibona(x-2) return f n=int(input(""请输入数列第几项:"")) m=fibona(n) print(""数列的第""+str(n)+""项的值为""+str(m))",1,8,21,34,B,"程序段中的数列其实是斐波那契数列,这个数列从第 3 项开始,每一项都等于前两项之和. 1, 1, 2, 3, 5, 8, 13, 21, 34, 55...","35,",4,0,0,递归与递推,0,0
+5094,0,1,"有如下Python的自定义函数,执行该程序后,结果是?( ) def  calc(x,y,op): return eval(str(x)+op+str(y)) print(calc(3,5,'+'))",8,35,None,-2,A,"该函数功能是将参数 x,y 用 op 的运算符运算,故选 A","35,",4,0,0,自定义函数的创建与调用,0,0
+5095,0,1,"有如下 Python 程序,执行该程序后,结果是? x = 3 def  calc(): x = 5 print(calc())",3,5,无输出,None,D,"自定义函数没有 return 语句,返回值为 None ,故选 D","35,",4,0,0,自定义函数的创建与调用,0,0
+5096,0,1,应用分治算法的前提是?,问题的可分性和解的可归并性,问题的复杂性和解的简单性,问题的可分性和解的存在性,问题的复杂性和解的可归并性,A,问题的可分性和解的可归并性是应用分治算法的前提.,"35,",4,0,0,分治算法,0,0
+5097,0,1,"有一球从 100 米高度自由落下,每次落地后反跳回原高度的一半,再落下,求它在第 10 次落地前,反弹多高?用递归函数解决,下面选项正确的是?",def height(n): if n == 1: return 100 else: return n*2 print(height(10)),def height(n): if n == 1: return 100 else: return height(n-1)/2 print(height(10)),def height(n): if n == 1: return 100 else: return height(n+1)/2 print(height(10)),def height(n): if n == 1: return 100 else: return height(n-1)*2 print(height(10)),B,"每次弹起的高度都是上次的一半,因此递归式子为 height(n-1)/2","35,",5,0,0,递归与递推,0,0
+5098,0,1,"有如下 Python 程序,执行该程序后,结果是? g = lambda x,y=3,z=5:x+y+z print(g(2))",2,5,7,10,D,"匿名函数 g 的功能是将 3 个参数 x,y,z 之和,故选 D","35,",4,0,0,匿名函数,0,0
+5099,0,1,"下面的程序输出1~100之间能被7整除但不能同时被5整除的所有整数. k=1 while k<101: if k%7==0 and k%5 !=0: print(k) k += 1 根据下面哪个选项的方法优化后,程序的运行效率最高?",将 k=1 改为 k=7,将 k,将 k += 1 改为 k += 7,"将 k=1 改为 k=7 ,同时将 k += 1 改为 k += 7",D,"选项 A 可以少执行 6 次,选项 B 可以少执行 2 次,选项 D 可以少执行 86 次.选项 C 程序不能实现设计的功能.","35,",4,0,0,函数使用,0,0
+5100,0,1,下列程序段的运行结果为?( ) def f(n): if n<=1: return 1 else: return f(n-1)*3 print(f(5)),9,27,81,243,C,f(5)=f(4)*3=f(3)*3*3=f(2)*3*3*3=f(1)*3*3*3*3=1*81=81,"35,",4,0,0,递归与递推,0,0
+5101,0,1,"下列选项中,关于如何安装第三方库的说法正确的是?","如果电脑没有联网,仍然可以使用 pip 工具安装本地的 whl 文件",必须使用命令行工具安装第三方库,"第三方库只要可以用 pip 完整的下载下来,就可以成功安装",安装上 Anaconda 就安装了所有的第三方库,A,"可执行文件不需要使用命令行工具就可以安装.没有编译的第三方库,即使能够下载,也无法安装. Anaconda 里面包含了 800 多个第三方库,但是不是全部的第三方库.","35,",3,0,0,"第三方库(模块)的获取,安装与调用",0,0
+5102,0,1,运行以下程序输出的结果是?( ) y=2 def fun(): global y y=1 print(y) fun() print(y),2 1,2 2,1 2,1 1,D,"Python 中定义函数时,若想在函数内部对函数外的变量进行操作,就需要在函数内部声明其为 global 以改变它的值.","35,",4,0,0,"函数的相关概念,全局变量和局部变量",0,0
+5103,0,1,下面哪种算法使用了分治的方法?,插入排序,快速排序,选择排序,冒泡排序,B,只有 B 使用了分治的方法.,"35,",3,0,0,分治算法,0,0
+5104,0,1,下面关于递归函数说法正确的是?,"一般来说,递归函数的执行效率高于非递归函数",边界条件和递归关系是递归函数编写的关键,递归函数的嵌套调用次数没有限制,递归函数不可以改写为非递归函数,B,"一般来说,递归函数代码简洁,易于理解,但执行效率较低.递归函数的调用次数必须有限制.","35,",3,0,0,递归与递推,0,0
+5105,0,1,"观察此题示例代码,以下表述中错误的是? nums = range(2,20) for i in nums: nums=list( filter(lambda x:x==i or x % i,nums)) print(nums)",filter() 函数输出后是一个数组而不是列表,示例代码中的关键字 lambda 表示匿名函数,"lambda x:x==i or x % i,nums 中冒号 : 之前的 x 是这个函数的参数","匿名函数需要 return 来返回值,表达式本身结果就是返回值",D,"关键字 lambda 表示匿名函数,冒号之前的表示它们是这个函数的参数,匿名函数不需要 return 来返回值,表达式本身结果就是返回值.在定义匿名函数时,需要将它直接赋值给一个变量,然后再像一般函数调用.","35,",4,0,0,匿名函数,0,0
+5106,0,1,"在一个平面中,有 n 个圆两两相交,但任二个圆不相切,任三个圆无公共点,以下函数能计算出 n 个圆把平面分成的区域个数,空格处填写的语句是? def c(n): if n=1: return 2 else: return",c(n-1)+2*(n-1),c(n-1)+ c(n-2),c(n-1)+2*n,c(n-1)+2*(n+1),A,"设这n个圆将平面分成an个区域.易知,a1=2,a2=4.现在假设前n-1个圆将平面分成了an-1个区域,当加入第n个圆(虚线圆)时,由题设这个圆与前面的n-1个圆一定交于2(n-1)个点,这2(n-1)个点把第n个圆分成2(n-1)条弧,而每条弧正好将前面的n-1个圆分成的区域中的其经过的每个区域分成2个区域,故新加入的第n个圆使所成的区域数增加了2(n-1) .因此可以建立如下带初值的递推关系: an=an-1+2(n-1) a1=2","35,",5,0,0,递归与递推,0,0
+5107,0,1,"有如下 Python 程序段,执行该程序后,结果是? def fun(*p): return sum(p) print(fun(1,3,5))",4,6,8,9,D,"该函数功能是将参数 1,3,5 求和,故选 D","35,",4,0,0,函数使用,0,0
+5108,0,1,以下关于全局变量和局部变量的表述正确的是?,"如果在函数中定义的局部变量与全局变量同名,则全局变量屏蔽局部变量","可以通过 global 关键字,通过全局变量修改局部变量",nonlocal 关键字用来在函数或局部作用域使用内层(非全局)变量,全局变量的作用域一定比局部变量的作用域大,D,"如果在函数中定义的局部变量与全局变量同名,则局部变量屏蔽全局变量.可以通过 global 关键字,通过局部变量修改全局变量. nonlocal 关键字用来在函数或局部作用域使用外层(非全局)变量.局部变量的作用域是指程序内部,全局变量的作用域是整个程序.","35,",3,0,0,全局变量和局部变量,0,0
+5109,0,1,"关于以下程序,下列表述中错误的一项是? c=1 def fun(n): a=1 for b in range(1,n): a*=b return a n=int(input('Enter n=')) print(fun(n),c)","c 是全局变量, a 是局部变量","n 是形式参数,当 n=5 时,程序输出 120 1",程序实现求阶乘,range() 函数是 python 内置函数,B,"fun(n) 函数的功能是求阶乘, range(1,n) 是从 1 循环到 n-1 .","35,",4,0,0,递归与递推,0,0
+5110,0,1,"以下程序的运行结果是? def f(x,y,z):     print(x,y,z) f(z=3,x=2,y=1)",3 2 1,1 2 3,2 1 3,3 1 2,C,关键字实参,"35,",4,0,0,函数的相关概念,0,0
+5111,0,3,所有的 Python 第三方库均可以使用 pip 工具进行安装.,,,,,0,"错误.使用 pip 有一些限制,如在线,可安装包等.","35,",3,0,0,"第三方库(模块)的获取,安装与调用",0,0
+5112,0,3,算法的时间复杂度与空间复杂度没有必然关系.,,,,,1,,"35,",3,0,0,时间复杂度与空间复杂度,0,0
+5113,0,3,"在创建自定义函数时,即使函数没有参数,也必须保留一对空的 ""()"" .",,,,,1,,"35,",3,0,0,自定义函数的创建与调用,0,0
+5114,0,3,"执行以下代码: def fun( mylist ): mylist.append([1,2,3,4]) print(""函数内取值: "", mylist) return mylist = [5,6,7] fun( mylist ) print(""函数外取值: "", mylist) 程序输出的结果为:函数内取值:  [5, 6, 7, [1, 2, 3, 4]] 函数外取值:  [5, 6, 7, [1, 2, 3, 4]].",,,,,1,"实例中传入函数的和在末尾添加新内容的对象用的是同一个引用,输出是一样的.","35,",4,0,0,函数的相关概念,0,0
+5115,0,3,"定义 Python 函数时,如果函数中没有 return 语句,则该函数返回值是 None .",,,,,1,"定义 Python 函数时,如果函数中没有 return 语句,则该函数返回值 None","35,",3,0,0,函数的返回值,0,0
+5116,0,3,"执行以下代码: sum=0 def fun(arg1,arg2): sum=arg1+arg2 print(sum) return sum fun(5,10) print(sum) 程序输出的结果为:15 15",,,,,0,"第 1 个 print(sum) 是函数内的局部变量,输出 15 .第 2 个 print(sum) 是函数外的全局变量,输出 0 .","35,",4,0,0,全局变量和局部变量,0,0
+5117,0,3,"对于一个复杂问题,如果所分解出的各个子问题之间相互不独立,则不适合使用分治算法.",,,,,1,正确.分治算法要求子问题是相互独立的,"35,",3,0,0,分治算法,0,0
+5118,0,3,"执行以下代码: def fun( name, age = 30 ): print(""Name:"", name) print(""Age:"", age) return fun( age=40, name=""summy"" ) fun( name=""summy"" ) 程序输出的结果为: Name: summy Age: 40 Name: summy Age: 40.",,,,,0,"调用函数时,默认参数的值如果没有传入,则被认为是默认值.第二次调用 fun() 时 age 的值没有传入,则默认是 30 .","35,",4,0,0,函数的相关概念,0,0
+5119,0,3,"下列程序段运行后的结果是 2 . def change(a,b): a,b=b,a return a a=2 b=3 print(change(change(a,b),a))",,,,,1,"自定义函数 change ( a,b )的作用是交换变量 a,b 的值并返回变量 a 的值, change(2,3) 返回的值为 3 , change(3,2) 返回的值为 2 .","35,",4,0,0,自定义函数的创建与调用,0,0
+5120,0,3,"对于斐波那契数列: 1 , 1 , 2 , 3 , 5 , ...... ,我们只能采用迭代公式以递推的方式求解.",,,,,0,斐波那契数列可以用多种方式求解.,"35,",3,0,0,递归与递推,0,0
+5121,0,4,"在编写抽奖程序时,为了保证一个人只有一次中奖机会,要检查新抽出来的数字是不是已经被抽中过了. 一种办法是将已经中过奖的人员编号存放在 test_list 里面,然后每抽出一个新的人员编号,判断它是否在中奖人员列表中. 如果没有在中奖人员列表中,说明中奖号码有效,并将它保存进中奖人员列表;如果已经在里面了,就再生成一个新的人员编号. 请你补全下面的代码,实现判断一个数字是否在列表中的功能. # 子问题算法(子问题规模为 1 ) def is_in_list(init_list,num): if init_list[0] == num: return True else: return False # 分治法 def find_out(init_list,num): n = len(init_list) if ____①______          # 如果问题的规模等于 1 ,直接解决 return is_in_list(init_list,num) # 分解(子问题规模为 n/2 ) left_list,right_list = _________②____________ # 递归,分治,合并 res=find_out(left_list,num) __③__ find_out(right_list,num) return res if __name__ == ""__main__"": # 测试数据 test_list = [18,43,21,3,28,2,46,25,32,40,14,36] # 查找 print(_____④_____) 程序运行结果: >>>True",,,,,"<p class=""MsoNormal""><b><span><font face=""宋体"">参考答案:</font></span></b><span>
+
+</span><span><o:p></o:p></span></p><p class=""MsoNormal""><span>
+	(1)&nbsp;n</span><b><span>==</span></b><span>1:</span><b><span>&nbsp;</span></b><span>&nbsp;&nbsp;<font face=""宋体"">或其他正确答案; </font><font face=""Calibri"">(2</font><font face=""宋体"">分</font><font face=""Calibri"">)
+
+</font></span><span><o:p></o:p></span></p><p class=""MsoNormal""><span>
+	(2)</span><b><span>&nbsp;</span></b><span>init_list[:n//2],init_list[n//2:]</span><b><span>&nbsp;</span></b><span>&nbsp;&nbsp;&nbsp;<font face=""宋体"">或其他正确答案;</font><font face=""Calibri"">&nbsp;(2</font><font face=""宋体"">分</font><font face=""Calibri"">) 
+
+</font></span><span><o:p></o:p></span></p><p class=""MsoNormal""><span>
+	(3)&nbsp;or&nbsp; &nbsp; <font face=""宋体"">或其他正确答案;</font><font face=""Calibri"">&nbsp;(2</font><font face=""宋体"">分</font><font face=""Calibri"">) 
+
+</font></span><span><o:p></o:p></span></p><p class=""MsoNormal""><span>
+	(4) find_out(test_list,25)&nbsp; &nbsp;&nbsp;<font face=""宋体"">或其他正确答案.</font><font face=""Calibri"">&nbsp;(2</font><font face=""宋体"">分</font><font face=""Calibri"">)</font></span></p>","参考程序: # 子问题算法(子问题规模为 1 ) def is_in_list(init_list,num): if init_list[0] == num: return True else: return False # 分治法 def find_out(init_list,num): n = len(init_list) if n == 1:          # 如果问题的规模等于 1 ,直接解决 return is_in_list(init_list,num) # 分解(子问题规模为 n/2 ) left_list,right_list = init_list[:n//2],init_list[n//2:] # 递归(树),分治,合并 res=find_out(left_list,num) or find_out(right_list,num) return res if __name__ == ""__main__"": # 测试数据 test_list = [18,43,21,3,28,2,46,25,32,40,14,36] # 查找 print(find_out(test_list,25)) #True","35,",,0,0,,0,0
+5122,0,4,"乘法运算等于多个加法运算的和.比如, 3×2 可以理解为 3+3 ,也可以理解为 2+2+2 . 下面的程序使用递归算法演示了计算两个自然数的乘积的过程.请你补全代码. 输入:分两次输入自然数 num1 , num2 输出: num1 × num2 = 乘积 def cheng_fa(num1,num2,value): if ① value += 0 else: value += num1 ② value = cheng_fa(num1,num2,value) return ③ num1=int(input(' 输入第 1 个数 :')) num2=int(input(' 输入第 2 个数 :')) value=0 value = cheng_fa(num1,num2,value) print('{} X {} = {}'.format(num1,num2,value)) 程序运行结果: 输入第 1 个数: 3 输入第 2 个数: 7 3 X 7 = 21",,,,,"<p class=""MsoNormal""><b><span><font face=""宋体"">参考答案:</font></span></b><span>
+
+</span><span><o:p></o:p></span></p><p class=""MsoNormal""><span>
+	<font face=""宋体"">(</font><font face=""Calibri"">1</font><font face=""宋体"">)</font><font face=""Calibri"">num1==0 or num2==0:&nbsp; </font><font face=""宋体"">或其他等效答案 ;(</font><font face=""Calibri"">3</font><font face=""宋体"">分) </font><font face=""Calibri"">
+
+</font></span><span><o:p></o:p></span></p><p class=""MsoNormal""><span>
+	<font face=""宋体"">(</font><font face=""Calibri"">2</font><font face=""宋体"">)</font><font face=""Calibri"">num2 -= 1 </font><font face=""宋体"">或 </font><font face=""Calibri"">num2=num2 - 1&nbsp;</font><font face=""宋体"">或其他等效答案; (</font><font face=""Calibri"">4</font><font face=""宋体"">分) </font><font face=""Calibri"">
+
+</font></span><span><o:p></o:p></span></p><p class=""MsoNormal""><span>
+	<font face=""宋体"">(</font><font face=""Calibri"">3</font><font face=""宋体"">)</font><font face=""Calibri"">value </font><font face=""宋体"">.(</font><font face=""Calibri"">3</font><font face=""宋体"">分</font><font face=""Calibri"">)&nbsp; &nbsp;</font></span><span><o:p></o:p></span></p>","参考答案: ( 1 ) num1==0 or num2==0: 或其他等效答案 ( 3 分) ( 2 ) num2 -= 1 或 num2=num2 - 1 或其他等效答案 ( 4 分) ( 3 ) value ( 3 分 ) 参考程序: def cheng_fa(num1,num2,value):
+
+    if num1==0 or num2==0: value += 0 else: value += num1 num2 -= 1 value = cheng_fa(num1,num2,value) return value num1=int(input(' 输入第 1 个数: ')) num2=int(input(' 输入第 2 个数: ')) value=0 value = cheng_fa(num1,num2,value) print('{} X {} = {}'.format(num1,num2,value)) 程序运行结果: 输入第 1 个数: 3 输入第 2 个数: 7 3 X 7 = 21","35,",,0,0,,0,0
+5123,0,4,"外卖送餐服务越来越受到人们的喜爱,外卖小哥们也成了路上的一道风景. 当顾客使用外卖软件点餐时,会出现一个预计送达时间,包括了餐厅制作食物的时间,路上的骑行时间等等. 一种常用的计算路上骑行时间的方法是用曼哈顿距离 ( manhatton distance ) 除以平均骑行速度.平面上点 A(x1,y1) 与点 B(x2,y2) 的曼哈顿距离为: |x1-x2|+|y1-y2| . 假设一名外卖小哥的平均骑行速度为 30km/h .下面的程序模拟计算外卖小哥的路上骑行时间,请你补充完整. 输入:分两次输入 A 点和 B 点的坐标值 输出: A , B 两点间的曼哈顿距离和路上骑行时间. # 求绝对值 def my_abs(n): if ① return n else: return ② # 主程序 v=30 # 平均骑行速度 x1=float(input(' 输入 A 点的 x 坐标(米): ')) y1=float(input(' 输入 A 点的 y 坐标(米): ')) x2=float(input(' 输入 B 点的 x 坐标(米): ')) y2=float(input(' 输入 B 点的 y 坐标(米): ')) # 计算曼哈顿距离 mht mht = ③ # 计算路上骑行时间 time_on_the_road    = ④ print('A , B 两点的曼哈顿距离为 {} 米 '.format(mht)) print(' 预计路上骑行时间需要 {} 分钟 '.format(time_on_the_road)) 程序运行结果: 输入 A 点的坐标(米),以逗号分隔: -1000,1000 输入 B 点的坐标(米),以逗号分隔: 1000,-1000 A , B 两点的曼哈顿距离为 4000 米 预计路上骑行时间需要 8.0 分钟",,,,,"<p class=""MsoNormal""><b><span><font face=""宋体"">参考答案:</font></span></b><span>
+
+</span><span><o:p></o:p></span></p><p class=""MsoNormal""><span>
+	(1)&nbsp;n&gt;0: <font face=""宋体"">或</font><font face=""Calibri"">&nbsp;n&gt;=0:&nbsp;&nbsp; </font><font face=""宋体"">(</font><font face=""Calibri"">2</font><font face=""宋体"">分)</font><font face=""Calibri"">
+
+</font></span><span><o:p></o:p></span></p><p class=""MsoNormal""><span>
+	(2)&nbsp;-n&nbsp;&nbsp;<font face=""宋体"">(</font><font face=""Calibri"">2</font><font face=""宋体"">分) </font><font face=""Calibri"">
+
+</font></span><span><o:p></o:p></span></p><p class=""MsoNormal""><span>
+	(3)my_abs(x1-x2)+my_abs(y1-y2) <font face=""宋体"">或</font><font face=""Calibri"">&nbsp;sum([my_abs(x1-x2),my_abs(y1-y2)])&nbsp;</font><font face=""宋体"">或 </font><font face=""Calibri"">sum((my_abs(x1-x2),my_abs(y1-y2))) </font><font face=""宋体"">或其他等效答案;</font><font face=""Calibri"">&nbsp;&nbsp;</font><font face=""宋体"">(</font><font face=""Calibri"">4</font><font face=""宋体"">分) </font><font face=""Calibri"">
+
+</font></span><span><o:p></o:p></span></p><p class=""MsoNormal""><span>
+	(4)mht/1000/v*60 <font face=""宋体"">或</font><font face=""Calibri"">&nbsp;mht/(1000*v)*60 </font><font face=""宋体"">或</font><font face=""Calibri"">&nbsp;mht*60/1000/v </font><font face=""宋体"">或 </font><font face=""Calibri"">(mht*60)/(1000*v)</font><font face=""宋体"">或其他等效答案</font><font face=""Calibri"">&nbsp; </font><font face=""宋体"">.(</font><font face=""Calibri"">4</font><font face=""宋体"">分)&nbsp;</font><font face=""Calibri""></font></span></p>","参考程序: # 求绝对值 def my_abs(n): if n>0: return n else: return -n # 主程序 v=30    # 平均骑行速度 x1,y1=eval(input(' 输入 A 点的坐标(米),以逗号分隔: ')) x2,y2=eval(input(' 输入 B 点的坐标(米),以逗号分隔: ')) # 计算曼哈顿距离 mht mht = my_abs(x1-x2)+my_abs(y1-y2)               # 方法 1 mht = my_abs(y1-y2)+my_abs(x1-x2)               # 方法 2 mht = sum([my_abs(x1-x2),my_abs(y1-y2)])        # 方法 3 mht = sum((my_abs(x1-x2),my_abs(y1-y2)))        # 方法 4 # 计算路上骑行时间 time_on_the_road = mht/1000/v*60        # 方法 1 time_on_the_road = mht/(1000*v)*60      # 方法 2 time_on_the_road = mht*60/1000/v        # 方法 3 time_on_the_road = (mht*60)/(1000*v)    # 方法 4 print('A , B 两点的曼哈顿距离为 {} 米 '.format(mht)) print(' 预计路上骑行时间需要 {} 分钟 '.format(time_on_the_road))","35,",,0,0,,0,0

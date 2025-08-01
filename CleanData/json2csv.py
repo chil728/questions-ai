@@ -39,9 +39,11 @@ def json_convert_csv(input_folder, output_folder):
 
 
 if __name__ == "__main__":
-    input_folder = './cleaned_data/一級'
-    input_folder = os.path.abspath(input_folder)
-    output_folder = './cleaned_data_csv/一級'
-    output_folder = os.path.abspath(output_folder)
-
+    num_ch = ["一級", "二級", "三級", "四級"]
+    for ch in num_ch:
+        input_folder = f'./cleaned_data/{ch}'
+        input_folder = os.path.abspath(input_folder)
+        output_folder = f'./cleaned_data_csv/{ch}'
+        output_folder = os.path.abspath(output_folder)
+        json_convert_csv(input_folder, output_folder)
     json_convert_csv(input_folder, output_folder)
