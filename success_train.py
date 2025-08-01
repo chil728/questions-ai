@@ -1,4 +1,13 @@
 """
+# 安装PyTorch (CUDA 12.1)
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu121
+
+# 安装最新版Transformers
+pip install git+https://github.com/huggingface/transformers
+
+# 安装其他依赖
+pip install -U bitsandbytes accelerate peft datasets trl scipy einops sentencepiece
+
 PYTORCH_CUDA_ALLOC_CONF = "max_split_size_mb:128"
 CUDA_LAUNCH_BLOCKING = "1"
 """
