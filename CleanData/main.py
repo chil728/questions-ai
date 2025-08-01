@@ -7,10 +7,9 @@ def traverse_and_clean_json2csv(input_folder, temp_folder, output_folder):
     json2csv.json_convert_csv(temp_folder, output_folder)
 
 if __name__ == '__main__':
-    data_folder = './data'
-    data_folder = os.path.abspath(data_folder)
-    cleaned_folder = './cleaned_data'
-    cleaned_folder = os.path.abspath(cleaned_folder)
-    cleaned_csv_folder = './cleaned_data_csv'
-    cleaned_csv_folder = os.path.abspath(cleaned_csv_folder)
-    traverse_and_clean_json2csv(data_folder, cleaned_folder, cleaned_csv_folder)
+    num_ch = ["一級", "二級", "三級", "四級"]
+    for ch in num_ch:
+        data_folder = os.path.abspath(f'./data/{ch}')
+        cleaned_folder = os.path.abspath(f'./cleaned_data/{ch}')
+        cleaned_csv_folder = os.path.abspath(f'./cleaned_data_csv/{ch}')
+        traverse_and_clean_json2csv(data_folder, cleaned_folder, cleaned_csv_folder)
